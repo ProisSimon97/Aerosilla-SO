@@ -25,11 +25,11 @@ public class Aerosilla implements Runnable {
                 System.out.println("Silla " + id + " en espera de esquiadores");
                 sillaDisponible.release(4);
 
-                esquiadoresEnSilla.acquire();
+                esquiadoresEnSilla.acquire(4);
 
                 System.out.println("La silla "+ id + " esta completa. Se eleva");
 
-                Thread.sleep(2000); //simula el tiempo de viaje hacia la cima
+                Thread.sleep(3000); //simula el tiempo de viaje hacia la cima
 
                 System.out.println("La silla llego a la cima. Esquiadores se bajan");
             } catch (InterruptedException e) {
